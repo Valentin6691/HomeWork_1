@@ -75,12 +75,12 @@ m = int(input())
 k = int(input())
 flag = True
 for i in range(1, n):
-    if i * k == m and m != 1 and k != 1:
+    if i * k == m and m != 1 and k != 1 and k >= m:
         flag = False
     elif m == 1 and k == 1:
         flag = False
 for j in range(1, m):
-    if j * k == n and n != 1 and k != 1:
+    if j * k == n and n != 1 and k != 1 and k >= n:
         flag = False
     elif n == 1 and k == 1:
         flag = False
