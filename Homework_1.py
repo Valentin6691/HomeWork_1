@@ -45,21 +45,46 @@
 # 385916 -> yes
 # 123456 -> no
 
-a = int(input())
-b = a % 1000
-c = a // 1000
-summa1 = 0
-summa2 = 0
+# a = int(input())
+# b = a % 1000
+# c = a // 1000
+# summa1 = 0
+# summa2 = 0
 
-while b > 0:
-    x = b % 10
-    y = c % 10
-    summa1 = summa1 + x
-    summa2 = summa2 + y
-    b = b // 10
-    c = c // 10
-if summa1 == summa2:
-    print("Yes")
+# while b > 0:
+#     x = b % 10
+#     y = c % 10
+#     summa1 = summa1 + x
+#     summa2 = summa2 + y
+#     b = b // 10
+#     c = c // 10
+# if summa1 == summa2:
+#     print("Yes")
+# else:
+#     print('No')
+
+# Задача 4: Требуется определить, можно ли от шоколадки размером n
+# × m долек отломить k долек, если разрешается сделать один разлом по
+# прямой между дольками (то есть разломить шоколадку на два
+# прямоугольника).
+# 3 2 4 -> yes
+# 3 2 1 -> n
+
+n = int(input())
+m = int(input())
+k = int(input())
+flag = True
+for i in range(1, n):
+    if i * k == m and m != 1 and k != 1:
+        flag = False
+    elif m == 1 and k == 1:
+        flag = False
+for j in range(1, m):
+    if j * k == n and n != 1 and k != 1:
+        flag = False
+    elif n == 1 and k == 1:
+        flag = False
+if flag == False:
+    print('Yes')
 else:
     print('No')
-
